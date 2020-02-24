@@ -9,20 +9,21 @@
  */
 
 import React from 'react';
-// import {SafeAreaView, StyleSheet, View, Text, StatusBar} from 'react-native';
+import {StatusBar} from 'react-native';
 import {Provider} from 'react-redux';
-import {ReduxStore} from 'reduxState/store';
+import {ReduxStore, persistor} from 'reduxState/store';
 import RootScreen from 'routers/RootScreen';
+import {PersistGate} from 'redux-persist/es/integration/react';
 
 const App = () => {
   return (
     <Provider store={ReduxStore}>
-      {/* <StatusBar barStyle="dark-content" /> */}
-      <RootScreen />
+      <StatusBar translucent={true} backgroundColor="transparent" />
+      <PersistGate loading={null} persistor={persistor}>
+        <RootScreen />
+      </PersistGate>
     </Provider>
   );
 };
-
-// const styles = StyleSheet.create({});
 
 export default App;

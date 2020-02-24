@@ -5,13 +5,14 @@ import {
   NoArgAction,
   NumberAction,
 } from 'redux-type-actions';
+import {User} from 'types/types';
 
 const actions = createActions({
   showCameraOptions: NoArgAction,
 
   setAge: NumberAction,
 
-  setUser: createAction<{name: string; age: number; sex: 'male' | 'female'}>(),
+  setUser: createAction<User>(),
   logout: NoArgAction,
 });
 
