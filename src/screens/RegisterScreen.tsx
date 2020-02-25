@@ -36,9 +36,9 @@ const RegisterScreen = ({}: Props) => {
     if (user) {
       dispatch(actions.setUser(user));
       // 报错，跳转走了，定时器无法执行了
-      setTimeout(() => {
-        Alert.alert('注册成功');
-      }, 200);
+      // setTimeout(() => {
+      //   Alert.alert('注册成功');
+      // }, 200);
     }
   }
 

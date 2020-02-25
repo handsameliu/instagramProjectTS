@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {View, Text, Alert} from 'react-native';
+import {SafeAreaView, View, Text, Alert} from 'react-native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Button} from 'react-native-elements';
 // import {useNavigation} from '@react-navigation/native';
@@ -33,10 +33,12 @@ function HomeScreen() {
   }
 
   return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>动态</Text>
-      <Button title="退出" onPress={logout} />
-    </View>
+    <SafeAreaView>
+      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
+        <Text>动态</Text>
+        <Button title="退出" onPress={logout} />
+      </View>
+    </SafeAreaView>
   );
 }
 
