@@ -6,6 +6,8 @@ import {Button} from 'react-native-elements';
 import {useDispatch} from 'react-redux';
 import actions from 'reduxState/actions';
 import Icon from 'react-native-vector-icons/FontAwesome';
+import HomeScreen from 'screens/HomeScreen/HomeScreen';
+import ProfileScreen from 'screens/ProfileScreen/ProfileScreen';
 
 export type TabParamList = {
   HomeScreen: undefined;
@@ -13,34 +15,6 @@ export type TabParamList = {
   MapScreen: undefined;
   ProfileScreen: undefined;
 };
-
-function HomeScreen() {
-  const dispatch = useDispatch();
-  function logout() {
-    Alert.alert(
-      '提示',
-      '您确定要退出？',
-      [
-        {
-          text: '取消',
-          onPress: () => console.log('Cancel Pressed'),
-          style: 'cancel',
-        },
-        {text: '退出', onPress: () => dispatch(actions.logout())},
-      ],
-      {cancelable: false},
-    );
-  }
-
-  return (
-    <SafeAreaView>
-      <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-        <Text>动态</Text>
-        <Button title="退出" onPress={logout} />
-      </View>
-    </SafeAreaView>
-  );
-}
 
 function DiscoverScreen() {
   return (
@@ -54,14 +28,6 @@ function NearbyScreen() {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
       <Text>附近</Text>
-    </View>
-  );
-}
-
-function ProfileScreen() {
-  return (
-    <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>我的</Text>
     </View>
   );
 }

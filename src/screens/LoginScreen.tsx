@@ -30,14 +30,11 @@ const LoginScreen = ({}: Props) => {
         username,
         pwd,
       });
-      console.log('ok: ', ok);
-      console.log('msg: ', msg);
-      console.log('data: ', data);
       let user = data;
       if (ok && user) {
         dispatch(actions.setUser(user));
         setTimeout(() => {
-          Alert.alert('注册成功');
+          Alert.alert('登录成功');
         }, 200);
       } else {
         Alert.alert(msg || '登陆失败，请检查网络和输入后重试');
