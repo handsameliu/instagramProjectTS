@@ -30,3 +30,39 @@ export interface ReduxState {
 export type ScreensParamList = MainStackParamList &
   TabParamList &
   AuthStackParamList;
+
+export interface ReportResult {
+  name: string;
+  score: number;
+  user?: User;
+  baike_info: {
+    baike_url?: string;
+    image_url?: string;
+    description?: string;
+  };
+}
+
+export type ReportType = 'plant';
+export interface Report extends DataTimeStamp {
+  id: string;
+  user: User;
+  image: number;
+  desc: string;
+  lat: number;
+  lon: number;
+  type: ReportType;
+  extra?: ReportResult;
+}
+
+export interface FeedLike extends DataTimeStamp {
+  id: number;
+  userId: number;
+}
+
+export interface Feed extends DataTimeStamp {
+  id: string;
+  images?: number[];
+  desc?: string;
+  feedLikes?: FeedLike[];
+  user: User;
+}
