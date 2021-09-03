@@ -18,7 +18,7 @@
     "@react-navigation/native": "^5.0.8",
     "@react-navigation/stack": "^5.0.8",
     "@types/qs": "^6.9.1",
-    "immer": "^5.3.6",
+    "immer": "^9.0.6",
     "qs": "^6.9.1",
     "react": "16.9.0",
     "react-native": "0.61.5",
